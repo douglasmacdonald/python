@@ -1,3 +1,32 @@
+/database/experimentation.ipynb
+/tags
+/database/.ipynb_checkpoints/experimentation-checkpoint.ipynb
+/discovery/Logging_HOWTO.pdf
+/handlers/pay/payment_page/.__init__.py.swp
+/handlers/pay/process_payment/.__init__.py.swp
+/handlers/pay/.__init__.py.swp
+/handlers/index/.__init__.py.swp
+/docs/Logging_HOWTO.pdf
+*~
+/html/.__init__.py.swp
+/html/index/.__init__.py.swp
+/html/pay/.__init__.py.swp
+/html/pay/payment_page/.__init__.py.swp
+/html/pay/process_payment/.__init__.py.swp
+/configuration/.setup_jinja.py.swp
+/.main.py.swp
+*.pyc
+
+# Directories to ignore
+third_party_code/damm/
+third_party_code/stripe/
+third_party_code_do_not_deploy/google_appengine/
+third_party_code_do_not_deploy/pandas/
+
+###############################################################################
+# The following was provided by GitHub's template
+###############################################################################
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
