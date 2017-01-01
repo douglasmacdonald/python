@@ -6,4 +6,6 @@
 
 source activate py27
 
-./third_party_code_do_not_deploy/google_appengine/dev_appserver.py ./
+#./third_party_code_do_not_deploy/google_appengine/dev_appserver.py ./
+
+~/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine/dev_appserver.py ./
