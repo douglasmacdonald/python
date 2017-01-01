@@ -2,6 +2,11 @@
 
 import os
 import shutil
+import sys
+
+assert sys.version_info > (3, 0)
+
+
 
 ################################################################################
 # Does damm exist?
