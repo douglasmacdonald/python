@@ -9,12 +9,14 @@ import sys
 import os
 
 # Setting path used for 3rd libraries or my stand alone libraries.
+
 additional_path = os.path.join(sys.path[0], "third_party_code")
-sys.path.append(additional_path)
+
+if additional_path not in sys.path:
+     sys.path.insert(0, additional_path)
 
 import webapp2 as webapp
 import _setup_jinja as template_engine
 
-import damm.damm16 as check_digit_algorithm
+from damm import damm16 as check_digit_algorithm
 import stripe as payment_provider
-
