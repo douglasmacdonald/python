@@ -1,4 +1,5 @@
-/database/experimentation.ipynb
+*.ipynb
+
 /tags
 /database/.ipynb_checkpoints/experimentation-checkpoint.ipynb
 /discovery/Logging_HOWTO.pdf
