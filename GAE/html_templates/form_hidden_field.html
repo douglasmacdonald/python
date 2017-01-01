@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+{% macro form_hidden_field(performance_id
+    , product_value
+    , name_on_ticket_value
+    , show_id
+    , total_cost_value) -%}
+
+    <input type="hidden" name="go_to_payment_clicked_name" value="True">
+    <input type="hidden" name="performance_id" value={{performance_id}}>
+    <input type="hidden" name="product" value="{{product_value}}">
+    <input type="hidden" name="name_on_ticket_name" value="{{name_on_ticket_value}}">
+    <input type="hidden" name="show_id" value={{show_id}}>
+    <input type="hidden" name="total_cost" value="{{total_cost_value}}">
+    <input type="hidden" class="input-mini" id="amount" name="amount" maxlength="7" value="{{total_cost_value}}" data-numeric required/>
+    <input type="hidden" class="input-mini" id="currency" name="currency" size="3" maxlength="3" value="gbp" data-numeric required />
+
+{%- endmacro %}
