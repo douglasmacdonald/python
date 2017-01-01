@@ -1,7 +1,6 @@
+/GAE/tags
 *.ipynb
 
-/tags
-/database/.ipynb_checkpoints/experimentation-checkpoint.ipynb
 /discovery/Logging_HOWTO.pdf
 /handlers/pay/payment_page/.__init__.py.swp
 /handlers/pay/process_payment/.__init__.py.swp
