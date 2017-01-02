@@ -15,8 +15,8 @@ logger = logging.getLogger(__file__)
 logging.basicConfig(level=logging.DEBUG)
 
 # Process and render
-import process_and_render_buy_tickets_html as tt
-import index_page_html as ii
+import process_input.process_and_render_buy_tickets_html as tt
+import process_input.index_page_html as ii
 
 def get_buy_tickets_no_error_handling_charge_html(html_page_get_multi_dic):
     logger.info("Function: get_buy_tickets_no_error_handling_charge_html")

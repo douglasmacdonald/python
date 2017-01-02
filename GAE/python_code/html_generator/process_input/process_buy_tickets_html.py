@@ -2,10 +2,10 @@
 # Process html in
 ################################################################################
 
-from process_input.process_ticket_page import process as process_ticket
-from process_input.process_charge_page import charge_add_to_ticket_list_no_error_handling
-from process_input.process_charge_page import charge_add_to_ticket_list_with_error_handling
-from process_input.process_charge_page import no_charge_and_add_to_ticket_list
+from process_ticket_page import process as process_ticket
+from process_charge_page import charge_add_to_ticket_list_no_error_handling
+from process_charge_page import charge_add_to_ticket_list_with_error_handling
+from process_charge_page import no_charge_and_add_to_ticket_list
 
 # TODO: should the process ticket page be called again. Might this make it
 # more likely that the ticket list will be updated correctly.

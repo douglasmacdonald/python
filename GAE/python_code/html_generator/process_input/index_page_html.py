@@ -1,4 +1,4 @@
-from process_input.process_index_page import process
+from process_index_page import process
 
 def get_index_page_html(
     html_template_render
