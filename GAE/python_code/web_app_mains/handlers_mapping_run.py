@@ -7,7 +7,7 @@ import os
 additional_path = os.path.join(sys.path[0], "python_code")
 sys.path.append(additional_path)
 
-from interface import webapp
+from local_lib import webapp
 
 #from html_generator import index_page_html
 #from html_generator import process_and_render_buy_tickets_html

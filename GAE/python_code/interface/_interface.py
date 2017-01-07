@@ -15,8 +15,4 @@ additional_path = os.path.join(sys.path[0], "third_party_code")
 if additional_path not in sys.path:
      sys.path.insert(0, additional_path)
 
-import webapp2 as webapp
-import _setup_jinja as template_engine
-
 from damm import damm16 as check_digit_algorithm
-import stripe as payment_provider

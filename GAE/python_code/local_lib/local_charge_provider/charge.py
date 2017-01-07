@@ -1,7 +1,7 @@
 """Process payments using payment provider"""
 
 import decimal
-from python_code.interface import payment_provider
+from interface import payment_provider
 """Calls the payment provider. """
 
 #TODO: rename to payment_provider_charge
