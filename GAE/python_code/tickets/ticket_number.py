@@ -1,3 +1,5 @@
+# The next line is probably broken
+# Look in local library for the import
 from interface import check_digit_algorithm
 
 def encode(number):
@@ -12,4 +14,3 @@ def generate_ticket_number():
     number_with_check_digit = str(next_number) + str(check_digit)
 
     return number_with_check_digit
-

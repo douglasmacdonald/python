@@ -5,7 +5,7 @@ import os
 
 # Path to local code.
 additional_path = os.path.join(sys.path[0], "python_code")
-sys.path.append(additional_path)
+if additional_path not in sys.path: sys.path.append(additional_path)
 
 from local_lib import webapp
 
