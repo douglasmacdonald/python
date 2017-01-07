@@ -1,3 +1,10 @@
+# Prerequisite
+
+For development only, using the Anaconda Python distribution.
+* Python 3
+* Enviroments to switch to 2.7 
+
+
 # Switching between versions of Python
 
 http://conda.pydata.org/docs/py2or3.html
