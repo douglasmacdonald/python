@@ -1,8 +1,28 @@
+#! /usr/bin/env python
 """Interface to the web page processing code"""
 
 # https://webapp-improved.appspot.com/guide/request.html
 
+# Path to local code.
+import os
+import sys
+sys.path.append(os.path.join(sys.path[0], '..'))
 
+sys.path.append(os.path.join(sys.path[0], '..', '..'))
+
+google_appengine_path = os.path.join(
+    os.path.expanduser("~")
+        , 'Dropbox'
+        , 'publicly_visible_binaries'
+        , 'third_party_code_do_not_deploy'
+        , 'google_appengine')
+
+#sys.path.append(google_appengine_path)
+
+sys.path.append(
+    os.path.join(google_appengine_path
+    , 'lib'
+    , 'jinja2-2.6'))
 
 # HTML templates
 import local_lib.local_template_engine as te
@@ -53,3 +73,17 @@ def get_index_page_html(handler_mapping, webapp_debug):
         , handler_mapping
         , webapp_debug
         , logger)
+
+if __name__ == '__main__':
+
+    import unittest
+
+    class IntegerArithmenticTestCase(unittest.TestCase):
+        def testAdd(self):  ## test method names begin 'test*'
+            self.assertEqual((1 + 2), 3)
+            self.assertEqual(0 + 1, 1)
+        def testMultiply(self):
+            self.assertEqual((0 * 10), 0)
+            self.assertEqual((5 * 8), 40)
+
+    unittest.main()

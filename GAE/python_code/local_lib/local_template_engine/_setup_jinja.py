@@ -1,6 +1,5 @@
 import jinja2
 
-
 class TemplateWrapper:
     def __init__(self, template):
         self.template = template
@@ -26,7 +25,6 @@ def get_jinja_environment(path_to_templates):
 
     return jinja_environment
 
-def get_template_environment(path_to_templates):    
+def get_template_environment(path_to_templates):
 
     return TemplateEnvironmentWrapper(get_jinja_environment(path_to_templates))
-

@@ -1,4 +1,5 @@
-from python_code.tickets import sold_ticket_list
+# Just to get the debugging going
+#from python_code.tickets import sold_ticket_list
 
 def set_ticket_list(multi_dict):
 
