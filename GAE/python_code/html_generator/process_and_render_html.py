@@ -2,10 +2,9 @@
 
 # https://webapp-improved.appspot.com/guide/request.html
 
-
-
 # HTML templates
 import local_lib.local_template_engine as te
+#import local_template_engine as te
 html_template_tickets_page_ = te.get_template('buy_tickets.html')
 html_template_index_page_ = te.get_template('index.html')
 

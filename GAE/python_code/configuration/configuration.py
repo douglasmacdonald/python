@@ -6,14 +6,10 @@ NOTE: much of this configuration is for development and debugging. In the future
 this will be broken up and repaced with data base and user input configuration.
 """
 
+import local_lib.local_db.data_models as data_models
 
 ################################################################################
-# Templates for generating HTML
-################################################################################
-path_to_templates = 'html_templates'
-
-################################################################################
-# 
+#
 ################################################################################
 default_payment_details_dictionaries = {
 'test' : {
@@ -41,14 +37,14 @@ default_payment_details_dictionaries = {
 
 """Configuration for Stripe payments"""
 
-# Set your secret key: remember to change this to your live secret key in 
+# Set your secret key: remember to change this to your live secret key in
 # production.
 # See your keys here https://dashboard.stripe.com/account/apikeys
 _stripe_api_key = "sk_test_UUH9bzEg6OV6HOhkfECvfJdX"
 payment_provider_api_key = _stripe_api_key
 
 # Stripe requires, for example, pounds and dollars to be converted into pence
-# and cents. In the future, this will have to be done dynamically depending on 
+# and cents. In the future, this will have to be done dynamically depending on
 # the currency.
 multiplier_to_minor_currency_unit = 100
 
@@ -62,9 +58,9 @@ publishable_key = _stripe_publishable_key
 ################################################################################
 # TICKET INFORMATION PROVIDED BY SHOW ORGANISORS
 ################################################################################
-""" Information that vendor provides concerning products and prices etc. In the 
-future, this function will be replaced with some form of database etc. For 
-development, this contains show and ticket information. In the future this will 
+""" Information that vendor provides concerning products and prices etc. In the
+future, this function will be replaced with some form of database etc. For
+development, this contains show and ticket information. In the future this will
 be provided by a database."""
 
 
@@ -76,25 +72,8 @@ be provided by a database."""
 #https://cloud.google.com/appengine/articles/modeling
 #https://cloud.google.com/appengine/docs/python/ndb/entity-property-reference#structured
 
-
-from google.appengine.ext import ndb
-
-class ShowInformation(ndb.Model):
-    show_id = ndb.StringProperty(indexed=False)
-    title = ndb.StringProperty(indexed=False)
-    image = ndb.StringProperty(indexed=False)
-    website = ndb.StringProperty(indexed=False)
-    facebook_text = ndb.StringProperty(indexed=False)
-    facebook_web_address = ndb.StringProperty(indexed=False)
-    twitter = ndb.StringProperty(indexed=False)
-    short_description = ndb.StringProperty(indexed=False)
-    age_restrictions = ndb.StringProperty(indexed=False)
-    videos = ndb.StringProperty(indexed=False)
-    comments = ndb.StringProperty(indexed=False)
-    show_description = ndb.StringProperty(indexed=False)
-
-show_information_entry = ShowInformation(show_id = "gotd"
-    , title = "Zombie Science: Genes of the Damned") 
+show_information_entry = data_models.ShowInformation(show_id = "gotd"
+    , title = "Zombie Science: Genes of the Damned")
 
 show_information_entry.put()
 
@@ -125,33 +104,11 @@ show_information = {
        'show_id': "another",
        'title': "Another show",
        'short_description': "This is another show"
-    }    
+    }
 
     }
 
-class Price(ndb.Model):
-    """Sub model for show prices."""
-    short_name = ndb.StringProperty(indexed=False)
-    price = ndb.StringProperty(indexed=False)
-    face_value = ndb.StringProperty(indexed=False)
-
-class PerformanceInformation(ndb.Model):
-    """Sub model for representing show infomation."""
-    show_id = ndb.StringProperty(indexed=False)
-    date = ndb.StringProperty(indexed=False)
-    doors = ndb.StringProperty(indexed=False)
-    show_start = ndb.StringProperty(indexed=False)
-    show_finish = ndb.StringProperty(indexed=False)
-    venue = ndb.StringProperty(indexed=False)
-    venue_address = ndb.StringProperty(indexed=False)
-    venue_website = ndb.StringProperty(indexed=False)
-    venue_phone = ndb.StringProperty(indexed=False)
-    additonal_information = ndb.StringProperty(indexed=False)
-    age_restrictions = ndb.StringProperty(indexed=False)
-    id = ndb.StringProperty(indexed=False)
-    prices = ndb.KeyProperty(kind=Price, repeated=True)
-
-performance_information_entry = PerformanceInformation(show_id = 'gotd'
+performance_information_entry = data_models.PerformanceInformation(show_id = 'gotd'
     , date =  'Sat 12 Mar'
     , doors = '18:00'
     , show_start = '18:30'
@@ -164,10 +121,10 @@ performance_information_entry = PerformanceInformation(show_id = 'gotd'
     , age_restrictions = "This event is for over 18s only - No refunds will be issued for under 18s."
     , id = "1"
     , prices = [
-        Price(short_name = "Concession"
+        data_models.Price(short_name = "Concession"
             , price = "3.00"
             , face_value = "3.30").put()
-        , Price(short_name = "General"
+        , data_models.Price(short_name = "General"
             , price = "5.50"
             , face_value = "5.00").put()
         ]
@@ -231,12 +188,12 @@ performance_dic = {
 #import pandas as pd
 #show_performance_information_df = pd.read_csv('../database/show_performance_information.csv')
 
-#List of currently available shows. 
+#List of currently available shows.
 product_id_dic = {
     '1':performance_dic['gotd'][0],
     '2':performance_dic['gotd'][1]}
 
-#Adding the list of available performances to the show information. 
+#Adding the list of available performances to the show information.
 show_information['gotd']['performances'] = performance_dic['gotd']
 
 shows_list = [show_information['gotd']
