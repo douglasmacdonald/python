@@ -13,4 +13,3 @@ def set_list_of_products_selected_from_numbers_of_items(multi_dict):
         , number_for_item_dic)
 
     return products_selected
-    
