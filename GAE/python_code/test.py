@@ -7,6 +7,12 @@ path_to_gae = '/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_
 
 sys.path.append(path_to_gae)
 
+sys.path.append('/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine/lib/jinja2-2.6')
+
+#dir_path = path_to_gae
+
+#os.path.join(dir_path, 'lib', 'jinja2-2.6')
+
 #DIR_PATH = os.path.dirname(__file__)
 
 #TEST_LIBRARY_PATHS = [
@@ -21,7 +27,7 @@ import wrapper_util
 
 # Before running
 # > source activate py27
-#import local_lib.local_template_engine as t
+import local_lib.local_template_engine as t
 
 # To get the next line to work, it needs the correct relative path.
 # The configuration is wrong.
