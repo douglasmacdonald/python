@@ -1,25 +1,39 @@
 #!/usr/bin/env python
 
-# Before running
-# > source activate py27
-
-#from subprocess import call
-#print(call(['source', 'activate', 'py27']))
-
 import os
 import sys
 
-sys.path.append('/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine')
+path_to_gae = '/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine'
+
+sys.path.append(path_to_gae)
+
 sys.path.append('/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine/lib/jinja2-2.6')
-sys.path.append('/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine/lib/yaml-3.10')
 
-"""import sys
-sys.path.insert(1, 'google-cloud-sdk/platform/google_appengine')
-sys.path.insert(1, 'google-cloud-sdk/platform/google_appengine/lib/yaml/lib')
-sys.path.insert(1, 'myapp/lib')
-"""
+#dir_path = path_to_gae
 
-#from google.appengine.ext import testbed
+#os.path.join(dir_path, 'lib', 'jinja2-2.6')
 
-from html_generator import process_and_render_html
-process_and_render_html.init_template_environment('../html_templates')
+#DIR_PATH = os.path.dirname(__file__)
+
+#TEST_LIBRARY_PATHS = [
+#    DIR_PATH,
+#    os.path.join(DIR_PATH, 'lib', 'cherrypy'),
+#]
+
+
+print sys.path
+
+import wrapper_util
+
+# Before running
+# > source activate py27
+import local_lib.local_template_engine as t
+
+# To get the next line to work, it needs the correct relative path.
+# The configuration is wrong.
+# The configuration could be passed in here
+# or the template enginde could be passed in.
+# Alternatively move the templates into the processing.
+# This makes the templates hard to find but they are closely
+# assocoated with the processing
+#from html_generator import process_and_render_html

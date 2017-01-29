@@ -25,11 +25,11 @@ sys.path.append(
     , 'jinja2-2.6'))
 
 # HTML templates
-<<<<<<< Updated upstream
+
 import local_lib.local_template_engine as te
 html_template_tickets_page_ = te.get_template('buy_tickets.html')
 html_template_index_page_ = te.get_template('index.html')
-=======
+
 
 html_template_tickets_page_ = 0
 html_template_index_page_ = 0
@@ -46,7 +46,6 @@ def init_template_environment(path_to_templates):
 
     html_template_tickets_page_ = te.get_template('buy_tickets.html')
     html_template_index_page_ = te.get_template('index.html')
->>>>>>> Stashed changes
 
 # Logging
 import logging
