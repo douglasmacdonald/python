@@ -1,8 +1,8 @@
 #import python_code.tickets.charge.charge as charge
 
-#import python_code.local_lib.local_charge_provider.charge as charge
+import python_code.local_lib.local_charge_provider.charge as charge
 
-def get_payment_provider_values_from_post_data(post_data_multi_dic, charge):
+def get_payment_provider_values_from_post_data(post_data_multi_dic):
     """ Strip the relevant post data from the pay page.
 
     The data stripped from post is dependant on the pay page.
