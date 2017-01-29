@@ -62,6 +62,87 @@ _stripe_publishable_key = "pk_test_QoFdqP4bCXiGXkwHA1Nw8JmN"
 
 publishable_key = _stripe_publishable_key
 
+<<<<<<< Updated upstream:GAE/python_code/configuration.py
+=======
+################################################################################
+# TICKET INFORMATION PROVIDED BY SHOW ORGANISORS
+################################################################################
+""" Information that vendor provides concerning products and prices etc. In the
+future, this function will be replaced with some form of database etc. For
+development, this contains show and ticket information. In the future this will
+be provided by a database."""
+
+
+#https://cloud.google.com/appengine/docs/python/getting-started/storing-data-datastore
+#https://cloud.google.com/appengine/docs/python/ndb/creating-entities
+#https://cloud.google.com/appengine/docs/python/ndb/entity-property-reference
+#https://cloud.google.com/appengine/docs/python/datastore/typesandpropertyclasses
+#https://cloud.google.com/appengine/docs/python/datastore/datamodeling#Lists
+#https://cloud.google.com/appengine/articles/modeling
+#https://cloud.google.com/appengine/docs/python/ndb/entity-property-reference#structured
+
+show_information_entry = data_models.ShowInformation(show_id = "gotd"
+    , title = "Zombie Science: Genes of the Damned")
+
+##show_information_entry.put()
+
+show_information = {
+
+    'gotd':{
+        'show_id': "gotd",
+        'title': "Zombie Science: Genes of the Damned",
+        'image': '',
+        'website': 'www.zombiescience.co.uk',
+        'facebook_text': "Zombie Science on Facebook",
+        'facebook_web_address': 'https://www.facebook.com/zombiescience',
+        'twitter': '@ZombieScience1Z',
+        'short_description': "A spoof lecture exploring the science of a Zombieism outbreak. How will you deal with the damned?",
+        'age_restrictions': "This event is for over 18s only - No refunds will be issued for under 18s.",
+        'videos': "",
+        'comments': "",
+        'show_description': "In this lecture, theoretical Zombiologist Dr. Smith asks whether you know what to do when the Zombie Apocalypse occurs and you find yourself in your own real-life zombie horror film. See the  lessons we can learn from disease outbreaks through history, discover what genetic and social factors could affect susceptibility to Zombieism and find out how modern medical technology such as stem cell  technology could be used to help the survivors. The outcome of the show will be decided by the audience - how will you deal with the Damned?",
+    },
+
+    'wcs':{
+       'show_id': "wcs"
+       , 'title': "Worst Case Senario"
+       , 'short_description': "..."
+    },
+
+    'another':{
+       'show_id': "another",
+       'title': "Another show",
+       'short_description': "This is another show"
+    }
+
+    }
+"""
+performance_information_entry = data_models.PerformanceInformation(show_id = 'gotd'
+    , date =  'Sat 12 Mar'
+    , doors = '18:00'
+    , show_start = '18:30'
+    , show_finish = '19:45'
+    , venue = "DRAM!, Glasgow"
+    , venue_address = "232-246 Woodlands Road, Glasgow, G3 6ND"
+    , venue_website = "https://www.facebook.com/dramglasgow/"
+    , venue_phone = "0141 332 1622"
+    , additonal_information = ""
+    , age_restrictions = "This event is for over 18s only - No refunds will be issued for under 18s."
+    , id = "1"
+    , prices = [
+        data_models.Price(short_name = "Concession"
+            , price = "3.00"
+            , face_value = "3.30").put()
+        , data_models.Price(short_name = "General"
+            , price = "5.50"
+            , face_value = "5.00").put()
+        ]
+    )
+"""
+
+#performance_information_entry.put()
+
+>>>>>>> Stashed changes:GAE/python_code/configuration/configuration.py
 # Data base of all performances, including past, current and future.
 performance_dic = {
     'gotd':[{
