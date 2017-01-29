@@ -3,11 +3,11 @@
 import os
 import sys
 
-path_to_gae = '/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine'
 
-sys.path.append(path_to_gae)
 
+sys.path.append('/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine')
 sys.path.append('/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine/lib/jinja2-2.6')
+sys.path.append('/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine/lib/yaml-3.10')
 
 #dir_path = path_to_gae
 
