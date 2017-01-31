@@ -19,8 +19,8 @@ from create_template_environment_ import create_template_environment
 
 template_environment_ = 0
 
-template_environment_ = create_template_environment(
-    template_engine, config.path_to_templates)
+#template_environment_ = create_template_environment(
+#    template_engine, config.path_to_templates)
 
 def init_template_environment(path_to_templates):
 
