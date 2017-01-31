@@ -3,7 +3,7 @@
 import os
 import sys
 
-
+path_to_templates = '../html_templates'
 
 sys.path.append('/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine')
 sys.path.append('/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine/lib/jinja2-2.6')
