@@ -32,7 +32,7 @@ sys.path.append('/home/douglas/Dropbox/publicly_visible_binaries/third_party_cod
 #]
 
 
-print sys.path
+#print sys.path
 
 import wrapper_util
 
@@ -47,4 +47,20 @@ import local_lib.local_template_engine as t
 # Alternatively move the templates into the processing.
 # This makes the templates hard to find but they are closely
 # assocoated with the processing
-#from html_generator import process_and_render_html
+from html_generator import process_and_render_html
+
+"""
+if __name__ == '__main__':
+
+    import unittest
+
+    class IntegerArithmenticTestCase(unittest.TestCase):
+        def testAdd(self):  ## test method names begin 'test*'
+            self.assertEqual((1 + 2), 3)
+            self.assertEqual(0 + 1, 1)
+        def testMultiply(self):
+            self.assertEqual((0 * 10), 0)
+            self.assertEqual((5 * 8), 40)
+
+    unittest.main()
+    """

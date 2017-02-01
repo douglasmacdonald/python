@@ -9,9 +9,9 @@ import sys
 
 # HTML templates
 
-import local_lib.local_template_engine as te
-html_template_tickets_page_ = te.get_template('buy_tickets.html')
-html_template_index_page_ = te.get_template('index.html')
+#import local_lib.local_template_engine as te
+#html_template_tickets_page_ = te.get_template('buy_tickets.html')
+#html_template_index_page_ = te.get_template('index.html')
 
 
 html_template_tickets_page_ = 0
@@ -36,8 +36,8 @@ logger = logging.getLogger(__file__)
 logging.basicConfig(level=logging.DEBUG)
 
 # Process and render
-import process_input.process_and_render_buy_tickets_html as tt
-import process_input.index_page_html as ii
+#import process_input.process_and_render_buy_tickets_html as tt
+#import process_input.index_page_html as ii
 
 def get_buy_tickets_no_error_handling_charge_html(html_page_get_multi_dic):
     logger.info("Function: get_buy_tickets_no_error_handling_charge_html")
@@ -74,17 +74,3 @@ def get_index_page_html(handler_mapping, webapp_debug):
         , handler_mapping
         , webapp_debug
         , logger)
-
-if __name__ == '__main__':
-
-    import unittest
-
-    class IntegerArithmenticTestCase(unittest.TestCase):
-        def testAdd(self):  ## test method names begin 'test*'
-            self.assertEqual((1 + 2), 3)
-            self.assertEqual(0 + 1, 1)
-        def testMultiply(self):
-            self.assertEqual((0 * 10), 0)
-            self.assertEqual((5 * 8), 40)
-
-    unittest.main()
