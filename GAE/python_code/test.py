@@ -3,6 +3,17 @@
 import os
 import sys
 
+#sys.path.append(os.path.join(sys.path[0], '..'))
+
+#sys.path.append(os.path.join(sys.path[0], '..', '..'))
+
+#google_appengine_path = os.path.join(os.path.expanduser("~"), 'Dropbox', 'publicly_visible_binaries', 'third_party_code_do_not_deploy', 'google_appengine')
+
+#sys.path.append(google_appengine_path)
+
+#sys.path.append(os.path.join(google_appengine_path, 'lib', 'jinja2-2.6'))
+
+
 path_to_templates = '../html_templates'
 
 sys.path.append('/home/douglas/Dropbox/publicly_visible_binaries/third_party_code_do_not_deploy/google_appengine')
