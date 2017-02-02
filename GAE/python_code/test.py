@@ -49,6 +49,13 @@ import local_lib.local_template_engine as t
 # assocoated with the processing
 from html_generator import process_and_render_html
 
+#print(dir(process_and_render_html))
+
+path_to_templates = '../html_templates'
+
+process_and_render_html.init_template_environment(path_to_templates)
+    ##
+
 """
 if __name__ == '__main__':
 
