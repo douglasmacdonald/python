@@ -18,7 +18,7 @@ html_template_tickets_page_ = 0
 html_template_index_page_ = 0
 
 def init_template_environment(path_to_templates):
-    ##path_to_templates = '../html_templates'
+    """ e.g. path_to_templates = '../html_templates' """
 
     import local_lib.local_template_engine as te
 
@@ -36,8 +36,8 @@ logger = logging.getLogger(__file__)
 logging.basicConfig(level=logging.DEBUG)
 
 # Process and render
-#import process_input.process_and_render_buy_tickets_html as tt
-#import process_input.index_page_html as ii
+import process_input.process_and_render_buy_tickets_html as tt
+import process_input.index_page_html as ii
 
 def get_buy_tickets_no_error_handling_charge_html(html_page_get_multi_dic):
     logger.info("Function: get_buy_tickets_no_error_handling_charge_html")

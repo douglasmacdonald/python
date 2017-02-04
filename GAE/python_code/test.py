@@ -54,6 +54,10 @@ from html_generator import process_and_render_html
 path_to_templates = '../html_templates'
 
 process_and_render_html.init_template_environment(path_to_templates)
+
+process_and_render_html.get_index_page_html("", "")
+process_and_render_html.get_buy_tickets_dummy_charge_html("")
+
     ##
 
 """
