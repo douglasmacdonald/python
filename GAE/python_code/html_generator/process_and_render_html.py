@@ -60,11 +60,13 @@ def get_buy_tickets_charge_with_error_handling_html(html_page_get_multi_dic):
         , html_page_get_multi_dic
         , logger)
 
-def get_buy_tickets_dummy_charge_html(html_page_get_multi_dic):
+def get_buy_tickets_dummy_charge_html(html_page_get_multi_dic
+        , performance_id_dic):
     logger.info("Function: get_buy_tickets_dummy_charge_html")
     return tt.get_buy_tickets_dummy_charge_html(
         html_template_tickets_page_.render
         , html_page_get_multi_dic
+        , performance_id_dic
         , logger)
 
 def get_index_page_html(handler_mapping, webapp_debug):

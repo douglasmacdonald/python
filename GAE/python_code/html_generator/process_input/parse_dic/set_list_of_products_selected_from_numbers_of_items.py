@@ -1,5 +1,5 @@
 
-from python_code.configuration import product_id_dic as performance_id_dic
+#from python_code.configuration import product_id_dic as performance_id_dic
 #from configuration import product_id_dic as performance_id_dic
 
 #from python_code.configuration import product_id_dic as performance_id_dic

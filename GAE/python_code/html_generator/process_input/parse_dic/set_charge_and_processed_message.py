@@ -1,10 +1,6 @@
 from html_generator.process_input.parse_dic.processing_payment_provider_template_values import get_payment_provider_values_from_post_data
 
-<<<<<<< Updated upstream
-
 # Just to get the debugging going
-=======
->>>>>>> Stashed changes
 #from python_code.tickets import sold_ticket_list
 
 def set_charge_and_processed_message(
@@ -13,6 +9,9 @@ def set_charge_and_processed_message(
         , mutable_dict
         , sold_ticket_list
         , logger):
+
+    raise ImportError("Just to get the debugging going, commented out 'from python_code.tickets import sold_ticket_list'")
+
 
     logger.info("Function: set_charge_and_processed_message")
 

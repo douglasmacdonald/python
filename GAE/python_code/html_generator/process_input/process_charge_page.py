@@ -2,10 +2,13 @@ from html_generator.process_input.parse_dic.set_charge_and_processed_message imp
 from html_generator.process_input.parse_dic.charge_and_add_to_ticket_list import charge_and_add_to_ticket_list
 from html_generator.process_input.parse_dic.charge_and_add_to_ticket_list import no_charge_and_add_to_ticket_list
 
-from python_code.local_lib.local_charge_provider.charge_assume_successful_payment_if_no_error import charge_assume_successful_payment_if_no_error as charge_debug
-from python_code.local_lib.local_charge_provider.charge import charge
+#from python_code.local_lib.local_charge_provider.charge_assume_successful_payment_if_no_error import charge_assume_successful_payment_if_no_error as charge_debug
+#from python_code.local_lib.local_charge_provider.charge import charge
 
 def charge_ticket_list_(charge_and_list, charge_function, mutable_dict, logger):
+    raise ImportError("Just to get the debugging going, commented out import")
+
+
     logger.info("Function: charge_ticket_list_")
 
     mutable_dict = set_charge_and_processed_message(

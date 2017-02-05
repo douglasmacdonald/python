@@ -18,13 +18,14 @@ from html_generator.process_input.parse_dic.set_show_times import set_show_times
 from html_generator.process_input.parse_dic.set_ticket_list import set_ticket_list
 from html_generator.process_input.parse_dic.set_total_cost import set_get_total_cost
 
-def process(html_page_get_multi_dic, logger):
+def process(html_page_get_multi_dic, performance_id_dic, logger):
     logger.info("Function: process")
 
     mutable_dict = {}
 
     mutable_dict['get_products_selected'] = \
-        set_list_of_products_selected_from_numbers_of_items(html_page_get_multi_dic)
+        set_list_of_products_selected_from_numbers_of_items(
+            html_page_get_multi_dic, performance_id_dic)
 
     mutable_dict['basket_list'] = set_basket_list(html_page_get_multi_dic)
 

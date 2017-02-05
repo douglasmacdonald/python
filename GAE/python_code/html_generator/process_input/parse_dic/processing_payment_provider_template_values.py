@@ -1,6 +1,6 @@
 #import python_code.tickets.charge.charge as charge
 
-import python_code.local_lib.local_charge_provider.charge as charge
+#import python_code.local_lib.local_charge_provider.charge as charge
 
 def get_payment_provider_values_from_post_data(post_data_multi_dic):
     """ Strip the relevant post data from the pay page.
@@ -12,6 +12,8 @@ def get_payment_provider_values_from_post_data(post_data_multi_dic):
 
     The return values are needed for the Stripe stripe.Charge.create
     """
+
+    raise ImportError("Just to get the debugging going, commented out import")
 
     token = post_data_multi_dic.get('token', '')
     amount = post_data_multi_dic.get('total_cost_value', '')
