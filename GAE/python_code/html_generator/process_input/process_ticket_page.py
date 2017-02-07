@@ -27,9 +27,9 @@ def process(html_page_get_multi_dic, performance_id_dic, logger):
         set_list_of_products_selected_from_numbers_of_items(
             html_page_get_multi_dic, performance_id_dic)
 
-    mutable_dict['basket_list'] = set_basket_list(html_page_get_multi_dic)
+    mutable_dict['basket_list'] = set_basket_list(html_page_get_multi_dic, performance_id_dic)
 
-    mutable_dict['description'] = get_short_description(html_page_get_multi_dic)
+    mutable_dict['description'] = get_short_description(html_page_get_multi_dic, performance_id_dic)
 
     mutable_dict['name_on_ticket_value'] = set_name_on_ticket(html_page_get_multi_dic)
 
@@ -72,7 +72,7 @@ def process(html_page_get_multi_dic, performance_id_dic, logger):
 
     mutable_dict['total_cost_value'] = set_get_total_cost(html_page_get_multi_dic)
 
-    mutable_dict['ticket_list'] = set_ticket_list(html_page_get_multi_dic)
+    mutable_dict['ticket_list'] = set_ticket_list(html_page_get_multi_dic, performance_id_dic)
 
     mutable_dict['token'] = get_payment_token(html_page_get_multi_dic)
 

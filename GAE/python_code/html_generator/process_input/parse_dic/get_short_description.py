@@ -4,9 +4,9 @@
 
 from set_basket_list import set_basket_list
 
-def get_short_description(html_page_get_multi_dic):
+def get_short_description(html_page_get_multi_dic, performance_id_dic):
 
-    basket_list = set_basket_list(html_page_get_multi_dic)
+    basket_list = set_basket_list(html_page_get_multi_dic, performance_id_dic)
 
     short_description = ""
     for item in basket_list:
