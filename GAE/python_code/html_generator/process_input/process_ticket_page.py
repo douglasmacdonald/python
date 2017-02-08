@@ -18,7 +18,7 @@ from html_generator.process_input.parse_dic.set_show_times import set_show_times
 from html_generator.process_input.parse_dic.set_ticket_list import set_ticket_list
 from html_generator.process_input.parse_dic.set_total_cost import set_get_total_cost
 
-def process(html_page_get_multi_dic, performance_id_dic, logger):
+def process(html_page_get_multi_dic, performance_id_dic, sold_ticket_list, logger):
     logger.info("Function: process")
 
     mutable_dict = {}
@@ -72,7 +72,7 @@ def process(html_page_get_multi_dic, performance_id_dic, logger):
 
     mutable_dict['total_cost_value'] = set_get_total_cost(html_page_get_multi_dic)
 
-    mutable_dict['ticket_list'] = set_ticket_list(html_page_get_multi_dic, performance_id_dic)
+    mutable_dict['ticket_list'] = set_ticket_list(html_page_get_multi_dic, sold_ticket_list)
 
     mutable_dict['token'] = get_payment_token(html_page_get_multi_dic)
 

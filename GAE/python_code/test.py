@@ -38,6 +38,9 @@ import wrapper_util
 
 # Before running
 # > source activate py27
+
+
+from tickets import sold_ticket_list
 import local_lib.local_template_engine as t
 
 # To get the next line to work, it needs the correct relative path.
@@ -56,7 +59,7 @@ path_to_templates = '../html_templates'
 process_and_render_html.init_template_environment(path_to_templates)
 
 process_and_render_html.get_index_page_html("", "")
-process_and_render_html.get_buy_tickets_dummy_charge_html({},{})
+process_and_render_html.get_buy_tickets_dummy_charge_html({},{}, sold_ticket_list)
 
     ##
 
