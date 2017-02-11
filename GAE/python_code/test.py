@@ -59,7 +59,10 @@ path_to_templates = '../html_templates'
 process_and_render_html.init_template_environment(path_to_templates)
 
 process_and_render_html.get_index_page_html("", "")
-process_and_render_html.get_buy_tickets_dummy_charge_html({},{}, sold_ticket_list)
+
+sold_ticket_list.append("0", "A", "Not used")
+
+#process_and_render_html.get_buy_tickets_dummy_charge_html({},{}, sold_ticket_list)
 
     ##
 
