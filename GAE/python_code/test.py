@@ -108,7 +108,6 @@ if __name__ == '__main__':
 
 from google.appengine.ext import testbed
 from google.appengine.ext import ndb
-from google.appengine.api import memcache
 
 # [START datastore_example_1]
 class TestModel(ndb.Model):
@@ -120,20 +119,6 @@ class TestModel(ndb.Model):
 class TestEntityGroupRoot(ndb.Model):
     """Entity group root"""
     pass
-
-
-def GetEntityViaMemcache(entity_key):
-    """Get entity from memcache if available, from datastore if not."""
-    entity = memcache.get(entity_key)
-    if entity is not None:
-        return entity
-    key = ndb.Key(urlsafe=entity_key)
-    entity = key.get()
-    if entity is not None:
-        memcache.set(entity_key, entity)
-    return entity
-# [END datastore_example_1]
-
 
 # [START datastore_example_test]
 class DatastoreTestCase(unittest.TestCase):
@@ -177,13 +162,7 @@ class DatastoreTestCase(unittest.TestCase):
         self.assertEqual(42, results[0].number)
     # [END datastore_example_filter]
 
-    # [START datastore_example_memcache]
-    def testGetEntityViaMemcache(self):
-        entity_key = TestModel(number=18).put().urlsafe()
-        retrieved_entity = GetEntityViaMemcache(entity_key)
-        self.assertNotEqual(None, retrieved_entity)
-        self.assertEqual(18, retrieved_entity.number)
-    # [END datastore_example_memcache]
+
 
 
 # [START main]
