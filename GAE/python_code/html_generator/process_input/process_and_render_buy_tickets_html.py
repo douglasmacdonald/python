@@ -1,4 +1,5 @@
 
+
 # https://webapp-improved.appspot.com/guide/request.html
 
 import process_buy_tickets_html as pr
@@ -44,11 +45,16 @@ def get_buy_tickets_dummy_charge_html(
     , html_page_get_multi_dic
     , performance_id_dic
     , sold_ticket_list
+    , charge_debug
     , logger):
 
     logger.info("Function: get_buy_tickets_dummy_charge_html")
     html = html_template_render(
         pr.get_buy_tickets_dummy_charge_html_process(
-            html_page_get_multi_dic, performance_id_dic, sold_ticket_list, logger))
+            html_page_get_multi_dic
+            , performance_id_dic
+            , sold_ticket_list
+            , charge_debug
+            , logger))
 
     return html

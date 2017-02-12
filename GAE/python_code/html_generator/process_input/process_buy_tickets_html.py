@@ -43,12 +43,16 @@ def get_buy_tickets_charge_with_error_handling_html_process(
 
     return template_variables
 
-def get_buy_tickets_dummy_charge_html_process(html_page_get_multi_dic, performance_id_dic, sold_ticket_list, logger):
+def get_buy_tickets_dummy_charge_html_process(html_page_get_multi_dic
+    , performance_id_dic
+    , sold_ticket_list
+    , charge_debug
+    , logger):
 
     logger.info("Function: get_buy_tickets_dummy_charge_html_process")
 
     mutable_dict = process_ticket(html_page_get_multi_dic, performance_id_dic, sold_ticket_list, logger)
 
-    template_variables = no_charge_and_add_to_ticket_list(mutable_dict, logger)
+    template_variables = no_charge_and_add_to_ticket_list(mutable_dict, charge_debug, logger)
 
     return template_variables

@@ -49,7 +49,7 @@ def charge_add_to_ticket_list_with_error_handling(html_page_get_multi_dic, logge
 
     return mutable_dict
 
-def no_charge_and_add_to_ticket_list(html_page_get_multi_dic, logger):
+def no_charge_and_add_to_ticket_list(html_page_get_multi_dic, charge_debug, logger):
     """Charge mocked.
 
     For development when offline but the charge is mocked. The charge

@@ -48,6 +48,7 @@ import wrapper_util
 
 from tickets import sold_ticket_list
 import local_lib.local_template_engine as t
+from local_lib.local_charge_provider.charge_assume_successful_payment_if_no_error import charge_assume_successful_payment_if_no_error as charge_debug
 
 # To get the next line to work, it needs the correct relative path.
 # The configuration is wrong.
@@ -112,7 +113,7 @@ class DatastoreTestCase(unittest.TestCase):
         self.testbed.activate()
         # Next, declare which service stubs you want to use.
         self.testbed.init_datastore_v3_stub()
-        
+        self.testbed.init_memcache_stub()
         # Clear ndb's in-context cache between tests.
         # This prevents data from leaking between tests.
         # Alternatively, you could disable caching by
@@ -123,6 +124,10 @@ class DatastoreTestCase(unittest.TestCase):
     def tearDown(self):
         self.testbed.deactivate()
     # [END datastore_example_teardown]
+
+    def testT(self):
+        sold_ticket_list.append("0", "A", "Not used")
+        process_and_render_html.get_buy_tickets_dummy_charge_html({},{}, sold_ticket_list, charge_debug)
 
     # [START datastore_example_insert]
     def testInsertEntity(self):
