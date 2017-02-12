@@ -90,26 +90,9 @@ class DatastoreTestCase(unittest.TestCase):
 
     ##
 
-"""
-if __name__ == '__main__':
-
-    import unittest
-
-    class IntegerArithmenticTestCase(unittest.TestCase):
-        def testAdd(self):  ## test method names begin 'test*'
-            self.assertEqual((1 + 2), 3)
-            self.assertEqual(0 + 1, 1)
-        def testMultiply(self):
-            self.assertEqual((0 * 10), 0)
-            self.assertEqual((5 * 8), 40)
-
-    unittest.main()
-    """
-
 from google.appengine.ext import testbed
 from google.appengine.ext import ndb
 
-# [START datastore_example_1]
 class TestModel(ndb.Model):
     """A model class used for testing."""
     number = ndb.IntegerProperty(default=42)
@@ -120,7 +103,6 @@ class TestEntityGroupRoot(ndb.Model):
     """Entity group root"""
     pass
 
-# [START datastore_example_test]
 class DatastoreTestCase(unittest.TestCase):
 
     def setUp(self):
@@ -130,14 +112,12 @@ class DatastoreTestCase(unittest.TestCase):
         self.testbed.activate()
         # Next, declare which service stubs you want to use.
         self.testbed.init_datastore_v3_stub()
-        self.testbed.init_memcache_stub()
+        
         # Clear ndb's in-context cache between tests.
         # This prevents data from leaking between tests.
         # Alternatively, you could disable caching by
         # using ndb.get_context().set_cache_policy(False)
         ndb.get_context().clear_cache()
-
-# [END datastore_example_test]
 
     # [START datastore_example_teardown]
     def tearDown(self):
@@ -162,10 +142,5 @@ class DatastoreTestCase(unittest.TestCase):
         self.assertEqual(42, results[0].number)
     # [END datastore_example_filter]
 
-
-
-
-# [START main]
 if __name__ == '__main__':
     unittest.main()
-# [END main]
