@@ -43,7 +43,8 @@ def get_buy_tickets_charge_with_error_handling_html_process(
 
     return template_variables
 
-def get_buy_tickets_dummy_charge_html_process(html_page_get_multi_dic
+def get_buy_tickets_dummy_charge_html_process(
+    html_page_get_multi_dic
     , performance_id_dic
     , sold_ticket_list
     , charge_debug
@@ -53,6 +54,10 @@ def get_buy_tickets_dummy_charge_html_process(html_page_get_multi_dic
 
     mutable_dict = process_ticket(html_page_get_multi_dic, performance_id_dic, sold_ticket_list, logger)
 
-    template_variables = no_charge_and_add_to_ticket_list(mutable_dict, charge_debug, logger)
+    template_variables = no_charge_and_add_to_ticket_list(
+        mutable_dict
+        , charge_debug
+        , sold_ticket_list
+        , logger)
 
     return template_variables

@@ -45,10 +45,9 @@ import wrapper_util
 # Before running
 # > source activate py27
 
-
 from tickets import sold_ticket_list
 import local_lib.local_template_engine as t
-from local_lib.local_charge_provider.charge_assume_successful_payment_if_no_error import charge_assume_successful_payment_if_no_error as charge_debug
+from local_lib.local_charge_provider.charge_assume_successful_payment_if_no_error import charge_assume_successful_payment_if_no_error
 
 # To get the next line to work, it needs the correct relative path.
 # The configuration is wrong.
@@ -66,7 +65,6 @@ path_to_templates = '../html_templates'
 process_and_render_html.init_template_environment(path_to_templates)
 
 process_and_render_html.get_index_page_html("", "")
-
 
 class DatastoreTestCase(unittest.TestCase):
 
@@ -127,7 +125,7 @@ class DatastoreTestCase(unittest.TestCase):
 
     def testT(self):
         sold_ticket_list.append("0", "A", "Not used")
-        process_and_render_html.get_buy_tickets_dummy_charge_html({},{}, sold_ticket_list, charge_debug)
+        process_and_render_html.get_buy_tickets_dummy_charge_html({},{}, sold_ticket_list, charge_assume_successful_payment_if_no_error)
 
     # [START datastore_example_insert]
     def testInsertEntity(self):

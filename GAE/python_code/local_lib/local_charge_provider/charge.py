@@ -6,8 +6,8 @@ from interface import payment_provider
 
 #TODO: rename to payment_provider_charge
 
-from python_code.configuration import payment_provider_api_key
-from python_code.configuration import multiplier_to_minor_currency_unit
+#from python_code.configuration import payment_provider_api_key
+#from python_code.configuration import multiplier_to_minor_currency_unit
 
 def charge_(amount, currency, token, description
     , multiplier_to_minor_currency_unit, api_key, logger):

@@ -38,9 +38,15 @@ def charge_and_add_to_ticket_list(charge, get_multi_dic, ticket_list
 
     return is_payment_made
 
-def no_charge_and_add_to_ticket_list(charge, get_multi_dic, ticket_list
-    , get_payment_provider_values_from_post_data):
-    """The charge parameter is simply not used."""
+
+def no_charge_and_add_to_ticket_list_2(
+    charge
+    , get_multi_dic
+    , ticket_list
+    , get_payment_provider_values_from_post_data
+    , logger):
+
+    logger.info("Function: no_charge_and_add_to_ticket_list_2")
 
     is_payment_made = False
 

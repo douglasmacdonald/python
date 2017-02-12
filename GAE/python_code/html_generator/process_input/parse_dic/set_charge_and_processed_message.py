@@ -10,10 +10,8 @@ def set_charge_and_processed_message(
         , sold_ticket_list
         , logger):
 
-    raise ImportError("Just to get the debugging going, commented out 'from python_code.tickets import sold_ticket_list'")
-
-
-    logger.info("Function: set_charge_and_processed_message")
+    #raise ImportError("Just to get the debugging going, commented out 'from python_code.tickets import sold_ticket_list'")
+    #logger.info("Function: set_charge_and_processed_message")
 
     mutable_dict['processed_message'] = charge_and_list(
         charge
