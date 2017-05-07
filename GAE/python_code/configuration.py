@@ -8,6 +8,8 @@ this will be broken up and repaced with data base and user input configuration.
 import os
 directory_of_this_file = os.path.dirname(os.path.realpath(__file__))
 
+import configuration_database_models as data_models
+
 
 ################################################################################
 # Templates for generating HTML
@@ -62,8 +64,6 @@ _stripe_publishable_key = "pk_test_QoFdqP4bCXiGXkwHA1Nw8JmN"
 
 publishable_key = _stripe_publishable_key
 
-<<<<<<< Updated upstream:GAE/python_code/configuration.py
-=======
 ################################################################################
 # TICKET INFORMATION PROVIDED BY SHOW ORGANISORS
 ################################################################################
@@ -142,7 +142,6 @@ performance_information_entry = data_models.PerformanceInformation(show_id = 'go
 
 #performance_information_entry.put()
 
->>>>>>> Stashed changes:GAE/python_code/configuration/configuration.py
 # Data base of all performances, including past, current and future.
 performance_dic = {
     'gotd':[{
@@ -203,39 +202,6 @@ performance_dic = {
 product_id_dic = {
     '1':performance_dic['gotd'][0],
     '2':performance_dic['gotd'][1]}
-
-
-show_information = {
-
-    'gotd':{
-        'show_id': "gotd",
-        'title': "Zombie Science: Genes of the Damned",
-        'image': '',
-        'website': 'www.zombiescience.co.uk',
-        'facebook_text': "Zombie Science on Facebook",
-        'facebook_web_address': 'https://www.facebook.com/zombiescience',
-        'twitter': '@ZombieScience1Z',
-        'short_description': "A spoof lecture exploring the science of a Zombieism outbreak. How will you deal with the damned?",
-        'age_restrictions': "This event is for over 18s only - No refunds will be issued for under 18s.",
-        'videos': "",
-        'comments': "",
-        'show_description': "In this lecture, theoretical Zombiologist Dr. Smith asks whether you know what to do when the Zombie Apocalypse occurs and you find yourself in your own real-life zombie horror film. See the  lessons we can learn from disease outbreaks through history, discover what genetic and social factors could affect susceptibility to Zombieism and find out how modern medical technology such as stem cell  technology could be used to help the survivors. The outcome of the show will be decided by the audience - how will you deal with the Damned?",
-    },
-
-    'wcs':{
-       'show_id': "wcs"
-       , 'title': "Worst Case Senario"
-       , 'short_description': "..."
-    },
-
-    'another':{
-       'show_id': "another",
-       'title': "Another show",
-       'short_description': "This is another show"
-    }
-
-    }
-
 
 #Adding the list of available performances to the show information.
 show_information['gotd']['performances'] = performance_dic['gotd']

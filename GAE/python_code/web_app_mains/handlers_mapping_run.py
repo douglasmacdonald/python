@@ -13,6 +13,8 @@ from local_lib import webapp
 #from html_generator import process_and_render_buy_tickets_html
 
 from html_generator import process_and_render_html
+path_to_templates = 'html_templates'
+process_and_render_html.init_template_environment(path_to_templates)
 
 ################################################################################
 # Functions that return a webapp.
