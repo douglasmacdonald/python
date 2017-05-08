@@ -4,3 +4,6 @@
 # TODO
 
 * Try to move functionality out of this directory. However, only when the dependancies are removed.
+
+# Before running
+# > source activate py27
