@@ -1,3 +1,4 @@
 #!/bin/bash
 
-ipython notebook
+# ipython notebook
+~/anaconda2/bin/jupyter-notebook
