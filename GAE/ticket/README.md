@@ -1,37 +1,18 @@
-# Prerequisite
+# Activate environment `py27`
 
-For development only, using the Anaconda Python distribution.
-* Python 3
-* Enviroments to switch to 2.7 
+See the `../README.md` at the top level for information on managing the environment.
 
+    > source activate py27
 
-# Switching between versions of Python
+---
 
-http://conda.pydata.org/docs/py2or3.html
+# Run GAE on local machine
 
-##  Look for avaialble verions
-
-$ conda search python | less
-
-
-$ conda create -n py27 python=2.7 anaconda
-
-# To activate this environment, use:
-# > source activate py27
-#
-# To deactivate this environment, use:
-# > source deactivate py27
-
-
---------------------------------------------------------------------------------
-
-# Run on local machine
-
-Running the **run_locally.sh** script in the top level folder will start the
+Running the **run_locally.sh** script in the top level GAE project directory will start the
 application for development and testing. It is simply a call the the GAE
-devlopment framework, downloaded locally ~/bin/google_appengine
+development framework, downloaded locally ~/bin/google_appengine
 
-> ./run_locally.sh
+    > ./run_locally.sh
 
 # app.yaml
 
@@ -42,15 +23,17 @@ versions, e.g. debug, offline etc..
 
 ...
 
---------------------------------------------------------------------------------
+---
+
+
 The following is deprecated while one page is being used for development.
 
 > *Despite being able to run on your machine for development an internet connection
 is still required for the payment functionality to be tested. If you want the
 application to work as if payments have been successful then run the application
 in ...*
---------------------------------------------------------------------------------
 
+---
 
 # Local
 
