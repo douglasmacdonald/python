@@ -1,12 +1,24 @@
-Using atom. To preview.
+# TODO
 
-`ctrl-shift-m`
+* http://kawahara.ca/using-numpy-on-google-app-engine-with-the-anaconda-python-distribution/
 
-* This directory contains GAE projects.
-* Individual projects are under there own directory.
+---
+
+# When reading this using Atom
+
+To preview this `README.md` rendered markdown.
+
+    ctrl-shift-m
+
+---
+
+# Purpose and organisation
+
+* This directory tree contains GAE projects.
+* Individual GAE projects are under there own directory.
 * Code is not shared directly between these and are there own environment.
-* Currently only using the GAE standard environment. https://cloud.google.com/appengine/docs/the-appengine-environments
- * When we start using `flexible` then the directory structure should change
+* Projects only using the GAE standard environment. https://cloud.google.com/appengine/docs/the-appengine-environments
+ * In the future, if we start using `GAE`'s `flexible` environment then change the organisation of the directory tree, thus:
 
 
     GAE+
@@ -15,31 +27,46 @@ Using atom. To preview.
        |
        +-standard
 
-# Installation
+# Set-up
+
+* Anaconda
+ * Install the latest `Anaconda` `Python 3.x`.
+ * `GAE` uses `Python 2.7`. However, I now mainly use `Python 3.x` and use the `Python` `Anaconda` distribution to manage the environments.
+
+# Environment
+
+## Environment - creating
 
 * https://conda.io/docs/user-guide/tasks/manage-python.html
 * `conda create -n py27 python=2.7 anaconda`
 
+## Environment - activation
+
 To activate this environment, use:
+
 ` > source activate py27`
 
 To deactivate an active environment, use:
+
 `> source deactivate`
 
+# GAE
 
-GAE
+## GAE - download
 
-source activate py27
-
-* I tend to work with Anaconda Python 3
-* http://kawahara.ca/using-numpy-on-google-app-engine-with-the-anaconda-python-distribution/
 * https://cloud.google.com/appengine/downloads
 * https://cloud.google.com/appengine/docs/standard/python/download
 
+## GAE - setup
+
 `./google-cloud-sdk/bin/gcloud init`
 
-Also need original app engine.
+## Original GAE
 
-Download code.
+For downloading existing code, original `GAE` required.
 
-~/google_appengine$ ./appcfg.py download_app -A zombie-science-exams-d -V 3 ~/git/python/GAE/zombie_exams/
+# Download our code already deployed on GAE
+
+`~/google_appengine$ ./appcfg.py download_app -A zombie-science-exams-d -V 3`
+
+`~/git/python/GAE/zombie_exams/`
