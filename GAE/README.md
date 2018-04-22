@@ -30,25 +30,36 @@ To preview this `README.md` rendered markdown.
 # Set-up
 
 * Anaconda
+ * For development only, using the Anaconda Python distribution.
  * Install the latest `Anaconda` `Python 3.x`.
- * `GAE` uses `Python 2.7`. However, I now mainly use `Python 3.x` and use the `Python` `Anaconda` distribution to manage the environments.
+ * `GAE` uses `Python 2.7`. However, I now mainly use `Python 3.x` and use the `Python` `Anaconda` distribution to manage the environments to switch to 2.7
 
 # Environment
+
+Switching between versions of Python
+
+http://conda.pydata.org/docs/py2or3.html
 
 ## Environment - creating
 
 * https://conda.io/docs/user-guide/tasks/manage-python.html
 * `conda create -n py27 python=2.7 anaconda`
 
+##  Look for avaialble verions
+
+    $ conda search python | less
+
 ## Environment - activation
 
 To activate this environment, use:
 
-` > source activate py27`
+`> source activate py27`
 
 To deactivate an active environment, use:
 
 `> source deactivate`
+
+`> source deactivate py27`
 
 # GAE
 
