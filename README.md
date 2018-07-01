@@ -1,9 +1,15 @@
+# When reading this using Atom
+
+To preview this `README.md` rendered markdown.
+
+    ctrl-shift-m
+
 # python
-A dump of Python scripts
+A place for Python scripts
 
 # Installing
 
-A common mistake is cloning using the default (HTTPS) instead of SSH. 
+Github. A common mistake is cloning using the default (HTTPS) instead of SSH.
 
 * Wrong
 
