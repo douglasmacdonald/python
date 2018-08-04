@@ -77,6 +77,8 @@ For downloading existing code, original `GAE` required.
 
 # Running on current system
 
+## Z exams
+
     ~/git/python/GAE/zombie_exams$ conda env list
     ~/git/python/GAE/zombie_exams$ source activate py27
     ~/git/python/GAE/zombie_exams$ ~/google_appengine/dev_appserver.py .
@@ -84,3 +86,7 @@ For downloading existing code, original `GAE` required.
 
     Allow dev_appserver to check for updates on startup? (Y/n): n
     dev_appserver will not check for updates on startup.  To change this setting, edit /home/doudlas/.appcfg_nag
+
+## Tickets
+
+    (py27) (xenial)doudlas@localhost:~/git/python/GAE/ticket$ ~/google_appengine/dev_appserver.py .
