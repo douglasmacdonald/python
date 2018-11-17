@@ -124,6 +124,7 @@ def download_save_from_list(list_of_filenames):
         print('.', end='')
 
 def run_get_list_of_data_files():
+    """Create lists of the downloaded data files."""
 
     list_of_data_files = pd.DataFrame(os.listdir(data_dir_path), columns=['files'])
     list_of_data_files_phytoplankton = list_of_data_files[list_of_data_files.files.str.startswith(phytoplankton_start_str)].copy()
@@ -176,9 +177,12 @@ format_str = {
     , 'format_str_biotoxin':file_start_string['e_coli_start_str'] + '_-_{}_-_{}_{}.xls'}
 
 
-def run_get_downloaded_shellfish_filenames():
+def get_data_dir_path():
+    return os.path.join(os.path.expanduser('~'), 'Downloads/data')
 
-    data_dir_path = os.path.join(os.path.expanduser('~'), 'Downloads')
+def run_get_downloaded_shellfish_filenames(data_dir_path):
+
+    #data_dir_path = os.path.join(os.path.expanduser('~'), 'Downloads/data')
 
     (filenames_shellfish_phytoplankton
     , filenames_shellfish_e_coli
@@ -202,13 +206,15 @@ def filepath(filename):
     return os.path.join(data_dir_path, filename)
 
 def filter_out_exiting_filesnames(list_of_filenames):
+    """Remove from list if the file exists locally."""
     new_filenames = []
     for filename in list_of_filenames:
         if os.path.exists(path):
             continue
         new_filenames.append(filename)
 
-def create_list_of_filenames(format_string):
+def create_list_of_potential_filenames(format_string):
+    """Create strings that could have been used."""
 
     my_months = ['January'
              , 'February'
