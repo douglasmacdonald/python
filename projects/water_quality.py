@@ -1,4 +1,21 @@
 import os
+import datetime
+import pandas as pd
+
+
+my_months = ['January'
+     , 'February'
+     ,'March'
+     , 'April'
+     , 'May'
+     , 'June'
+     , 'July'
+     , 'August'
+     , 'September'
+     , 'October'
+     , 'November'
+     , 'December'
+    ]
 
 def get_header(filepath):
 
@@ -126,10 +143,12 @@ def download_save_from_list(list_of_filenames):
 def run_get_list_of_data_files():
     """Create lists of the downloaded data files."""
 
+    data_dir_path = get_data_dir_path()
+
     list_of_data_files = pd.DataFrame(os.listdir(data_dir_path), columns=['files'])
-    list_of_data_files_phytoplankton = list_of_data_files[list_of_data_files.files.str.startswith(phytoplankton_start_str)].copy()
-    list_of_data_files_e_coli = list_of_data_files[list_of_data_files.files.str.startswith(e_coli_start_str)].copy()
-    list_of_data_files_biotoxin = list_of_data_files[list_of_data_files.files.str.startswith(biotoxin_start_str)].copy()
+    list_of_data_files_phytoplankton = list_of_data_files[list_of_data_files.files.str.startswith(file_start_string['phytoplankton_start_str'])].copy()
+    list_of_data_files_e_coli = list_of_data_files[list_of_data_files.files.str.startswith(file_start_string['e_coli_start_str'])].copy()
+    list_of_data_files_biotoxin = list_of_data_files[list_of_data_files.files.str.startswith(file_start_string['biotoxin_start_str'])].copy()
 
 
     def year(x):
@@ -180,14 +199,12 @@ format_str = {
 def get_data_dir_path():
     return os.path.join(os.path.expanduser('~'), 'Downloads/data')
 
-def run_get_downloaded_shellfish_filenames(data_dir_path):
-
-    #data_dir_path = os.path.join(os.path.expanduser('~'), 'Downloads/data')
+def run_get_downloaded_shellfish_filenames():
 
     (filenames_shellfish_phytoplankton
     , filenames_shellfish_e_coli
     , filenames_shellfish_biotoxin) = get_downloaded_shellfish_filenames(
-                                       data_dir_path=data_dir_path
+                                       data_dir_path=get_data_dir_path()
                                        , phytoplankton_start_str=file_start_string['phytoplankton_start_str']
                                        , e_coli_start_str=file_start_string['e_coli_start_str']
                                        , biotoxin_start_str=file_start_string['biotoxin_start_str'])
@@ -197,7 +214,7 @@ def run_get_downloaded_shellfish_filenames(data_dir_path):
         , filenames_shellfish_phytoplankton=filenames_shellfish_phytoplankton
         , filenames_shellfish_biotoxin=filenames_shellfish_biotoxin)
 
-    return file_start_string, filenames_shellfish_e_coli, filenames_shellfish_biotoxin
+    return filenames_shellfish_phytoplankton, filenames_shellfish_e_coli, filenames_shellfish_biotoxin
 
 def url(filename):
     return 'http://www.foodstandards.gov.scot/downloads/' + filename
@@ -216,19 +233,7 @@ def filter_out_exiting_filesnames(list_of_filenames):
 def create_list_of_potential_filenames(format_string):
     """Create strings that could have been used."""
 
-    my_months = ['January'
-             , 'February'
-             ,'March'
-             , 'April'
-             , 'May'
-             , 'June'
-             , 'July'
-             , 'August'
-             , 'September'
-             , 'October'
-             , 'November'
-             , 'December'
-            ]
+
 
     list_of_filenames = []
 
@@ -262,12 +267,14 @@ def get_downloaded_shellfish_filenames(data_dir_path
 
     return filenames_shellfish_phytoplankton, filenames_shellfish_e_coli, filenames_shellfish_biotoxin
 
-def run_assert_the_downloaded_files_are_the_same(filenames_shellfish_e_coli
-    , filenames_shellfish_phytoplankton, filenames_shellfish_biotoxin):
+def run_assert_the_downloaded_files_are_the_same(
+    filenames_shellfish_e_coli
+    , filenames_shellfish_phytoplankton
+    , filenames_shellfish_biotoxin):
 
     # These were the files as they were first downloaded.
 
-    assert filenames_shellfish_e_coli == [
+    assert filenames_shellfish_e_coli.sort() == [
      'Shellfish_-_E._coli_-_Weekly_Result_Report_-_2018_-_April_27_.xls',
      'Shellfish_-_E._coli_-_Weekly_Result_Report_-_2018_-_January_19_.xls',
      'Shellfish_-_E._coli_-_Weekly_Result_Report_-_2018_-_July_06_.xls',
@@ -296,9 +303,9 @@ def run_assert_the_downloaded_files_are_the_same(filenames_shellfish_e_coli
      'Shellfish_-_E._coli_-_Weekly_Result_Report_-_2018_-_June_22_.xls',
      'Shellfish_-_E._coli_-_Weekly_Result_Report_-_2018_-_July_20_.xls',
      'Shellfish_-_E._coli_-_Weekly_Result_Report_-_2018_-_June_08_.xls',
-     'Shellfish_-_E._coli_-_Weekly_Result_Report_-_2018_-_March_30_.xls']
+     'Shellfish_-_E._coli_-_Weekly_Result_Report_-_2018_-_March_30_.xls'].sort()
 
-    assert filenames_shellfish_phytoplankton == [
+    assert filenames_shellfish_phytoplankton.sort() == [
      'Shellfish_-_Phytoplankton_-_4_Weekly_Result_Report_-_2018_-_March_30.xlsx',
      'Shellfish_-_Phytoplankton_-_4_Weekly_Result_Report_-_2018_-_May_18.xlsx',
      'Shellfish_-_Phytoplankton_-_4_Weekly_Result_Report_-_2018_-_July_20.xlsx',
@@ -327,9 +334,9 @@ def run_assert_the_downloaded_files_are_the_same(filenames_shellfish_e_coli
      'Shellfish_-_Phytoplankton_-_4_Weekly_Result_Report_-_2018_-_June_08.xlsx',
      'Shellfish_-_Phytoplankton_-_4_Weekly_Result_Report_-_2018_-_July_27.xlsx',
      'Shellfish_-_Phytoplankton_-_4_Weekly_Result_Report_-_2018_-_July_06.xlsx',
-     'Shellfish_-_Phytoplankton_-_4_Weekly_Result_Report_-_2018_-_June_15.xlsx']
+     'Shellfish_-_Phytoplankton_-_4_Weekly_Result_Report_-_2018_-_June_15.xlsx'].sort()
 
-    assert filenames_shellfish_biotoxin == [
+    assert filenames_shellfish_biotoxin.sort() == [
      'Shellfish_-_Biotoxin_-_4_Weekly_Result_Report_-_2018_-_January_12.xls',
      'Shellfish_-_Biotoxin_-_4_Weekly_Result_Report_-_2018_-_February_16.xls',
      'Shellfish_-_Biotoxin_-_4_Weekly_Result_Report_-_2018_-_July_13.xls',
@@ -358,4 +365,4 @@ def run_assert_the_downloaded_files_are_the_same(filenames_shellfish_e_coli
      'Shellfish_-_Biotoxin_-_4_Weekly_Result_Report_-_2018_-_April_20.xls',
      'Shellfish_-_Biotoxin_-_4_Weekly_Result_Report_-_2018_-_June_15.xls',
      'Shellfish_-_Biotoxin_-_4_Weekly_Result_Report_-_2018_-_July_06.xls',
-     'Shellfish_-_Biotoxin_-_4_Weekly_Result_Report_-_2018_-_August_03.xls']
+     'Shellfish_-_Biotoxin_-_4_Weekly_Result_Report_-_2018_-_August_03.xls'].sort()
