@@ -4,6 +4,7 @@
 #
 # dev_appserver.py ./
 
+# This part is done in Python 3.x 
 ./python_code/check_third_party_code.py
 
 source activate py27

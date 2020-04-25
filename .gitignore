@@ -1,6 +1,5 @@
 /GAE/tags
 /GAE/third_party_code
-*.ipynb
 
 /discovery/Logging_HOWTO.pdf
 /handlers/pay/payment_page/.__init__.py.swp
@@ -117,3 +116,5 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+/notebooks/figs/

@@ -1,85 +1,92 @@
-# Prerequisite
+# TODO
 
-For development only, using the Anaconda Python distribution.
-* Python 3
-* Enviroments to switch to 2.7 
+* http://kawahara.ca/using-numpy-on-google-app-engine-with-the-anaconda-python-distribution/
 
+---
 
-# Switching between versions of Python
+# When reading this using Atom
 
-http://conda.pydata.org/docs/py2or3.html
+To preview this `README.md` rendered markdown.
 
-##  Look for avaialble verions
+    ctrl-shift-m
 
-$ conda search python | less
+---
 
+# Purpose and organisation
 
-$ conda create -n py27 python=2.7 anaconda
-
-# To activate this environment, use:
-# > source activate py27
-#
-# To deactivate this environment, use:
-# > source deactivate py27
+* This directory tree contains GAE projects.
+* Individual GAE projects are under there own directory.
+* Code is not shared directly between these and are there own environment.
+* Projects only using the GAE standard environment. https://cloud.google.com/appengine/docs/the-appengine-environments
+ * In the future, if we start using `GAE`'s `flexible` environment then change the organisation of the directory tree, thus:
 
 
---------------------------------------------------------------------------------
+    GAE+
+       |
+       +-flexible
+       |
+       +-standard
 
-# Run on local machine
+# Set-up Python
 
-Running the **run_locally.sh** script in the top level folder will start the
-application for development and testing. It is simply a call the the GAE
-devlopment framework, downloaded locally ~/bin/google_appengine
+## Anaconda and environments
+I mainly use `Python 3.x` with the `Python` `Anaconda`
+distribution to manage the environments to switch to 2.7.
 
-> ./run_locally.sh
+* Install the latest `Anaconda` `Python 3.x`.
+* Environment
+ * Switching between versions of Python
+ * http://conda.pydata.org/docs/py2or3.html
+* Environment creating
+ * https://conda.io/docs/user-guide/tasks/manage-python.html
+ * `conda create -n py27 python=2.7 anaconda`
+* Look for avaialble verions
+ * `$ conda search python | less`
 
-# app.yaml
+## Environment - activation
+ * To activate this environment, use:
+ * `> source activate py27`
+* To deactivate an active environment, use:
+ * `> source deactivate`
+ * `> source deactivate py27`
 
-Configuration file used by GAE. Also used here to switch between current
-versions, e.g. debug, offline etc..
+# GAE
 
-## Running offline
+## GAE - download
 
-...
+* https://cloud.google.com/appengine/downloads
+* https://cloud.google.com/appengine/docs/standard/python/download
 
---------------------------------------------------------------------------------
-The following is deprecated while one page is being used for development.
+## GAE - setup
 
-> *Despite being able to run on your machine for development an internet connection
-is still required for the payment functionality to be tested. If you want the
-application to work as if payments have been successful then run the application
-in ...*
---------------------------------------------------------------------------------
+`./google-cloud-sdk/bin/gcloud init`
+
+I have it installed in my home directory.
+
+`~/google-cloud-sdk/bin/gcloud init`
+
+## Original GAE
+
+For downloading existing code, original `GAE` required.
+
+# Download our code already deployed on GAE
+
+`~/google_appengine$ ./appcfg.py download_app -A zombie-science-exams-d -V 3`
+
+`~/git/python/GAE/zombie_exams/`
+
+# Running on current system
+
+## Z exams
+
+    ~/git/python/GAE/zombie_exams$ conda env list
+    ~/git/python/GAE/zombie_exams$ source activate py27
+    ~/git/python/GAE/zombie_exams$ ~/google_appengine/dev_appserver.py .
 
 
-# Local
+    Allow dev_appserver to check for updates on startup? (Y/n): n
+    dev_appserver will not check for updates on startup.  To change this setting, edit /home/doudlas/.appcfg_nag
 
-## Setting path for local appengine
+## Tickets
 
-* export PATH=$PATH:/path/to/google_appengine/
-
-# Bash script
-
-The bash script is used to run the appengine locally.
-
-# Stripe
-
-## Logon
-
-* Username: email@gmail.com
-* Password: usual+ipe
-
-## Installation
-
-* https://pypi.python.org/pypi/stripe/1.22.2
-* https://github.com/stripe/stripe-python
-* https://stripe.com/docs/libraries
-* https://github.com/twbs/bootstrap
-
-## Dashboard
-
-* https://dashboard.stripe.com/test/dashboard
-
-## Documentation
-
-* https://stripe.com/docs
+    (py27) (xenial)doudlas@localhost:~/git/python/GAE/ticket$ ~/google_appengine/dev_appserver.py .
