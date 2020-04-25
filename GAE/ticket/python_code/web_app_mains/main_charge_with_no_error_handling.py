@@ -1,4 +1,0 @@
-from handlers_mapping_run import run_main_charge_with_no_error_handling
-
-app = run_main_charge_with_no_error_handling()
-
